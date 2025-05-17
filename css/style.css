@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-
+}
 /*-------------------------------- Body -------------------------------------*/
 body {
   margin: 0;
@@ -21,6 +21,17 @@ body {
   /* space between headings, board, reset button */
   gap: 1.5rem;
 }
+/*-------------------------------- Title ------------------------------------*/
+h1 {
+  margin-top: 1px;
+  margin-bottom: -20px;
+}
+
+#noughts-\&-crosses {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 20px;
+}
 
 /*-------------------------------- Board ------------------------------------*/
 .board {
@@ -36,7 +47,7 @@ body {
   /* margin-left: auto; */
   /* margin-right: auto; */
 
-  /*  Option B (since your body is a column-flex) */
+  /*  body is a column-flex */
   align-self: center;
 }
 
@@ -59,7 +70,7 @@ body {
   background: red;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 1.5s ease;
 }
 
 /* visible when active */
@@ -92,38 +103,40 @@ body {
 .strike-line.col-2 {
   top: 0;
   bottom: 0;
-  width: 6px;
+  width: 8px;
 }
 
 .strike-line.col-0 {
-  left: 15%;                /* 30%/2 */
+  left: 14%;                /* 30%/2 */
 }
 .strike-line.col-1 {
-  left: 45%;                /* 30% + 15% */
+  left: 44%;                /* 30% + 15% */
 }
 .strike-line.col-2 {
-  left: 75%;                /* 60% + 15% */
+  left: 74%;                /* 60% + 15% */
 }
 
 /* --- Diagonals (unchanged) --- */
 .strike-line.diag-desc {
   top: 50%;
-  left: -20%;
-  width: 141%;
-  height: 6px;
+  left: -18%;
+  width: 125%;
+  height: 8px;
   transform: translateY(-50%) rotate(45deg);
 }
 
 .strike-line.diag-asc {
   top: 50%;
-  left: -20%;
-  width: 141%;
-  height: 6px;
+  left: -18%;
+  width: 125%;
+  height: 8px;
   transform: translateY(-50%) rotate(-45deg);
 }
 
 /*---------------------------- Reset Button ----------------------------*/
 #reset {
-  display: block;             /* make it a block so margin auto works */
-  margin: 1.5rem auto 0;      /* top 1.5rem, left/right auto, bottom 0 */
+position: "fixed";
+left: 50%;
+transform: translate(-50%, -50%)
+
 }
