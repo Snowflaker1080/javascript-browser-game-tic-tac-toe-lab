@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <script defer src="./js/app.js"></script>
-  <title>Tic-Tac-Toe</title>
-</head>
-<body>
-  <h1 id="tic-tac-toe">Tic-Tac-Toe</h1>
-  <h1 id="noughts-&-crosses">(Noughts & Crosses)</h1>
-  <h2 id="message">Message</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/app.js"></script>
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <h1 id="tic-tac-toe">Tic-Tac-Toe</h1>
+    <h1 id="noughts-&-crosses">(Noughts & Crosses)</h1>
+    <h2 id="message">X's turn</h2>
 
-  <section class="board">
-    <div class="sqr" id="0"></div>
-    <div class="sqr" id="1"></div>
-    <div class="sqr" id="2"></div>
-    <div class="sqr" id="3"></div>
-    <div class="sqr" id="4"></div>
-    <div class="sqr" id="5"></div>
-    <div class="sqr" id="6"></div>
-    <div class="sqr" id="7"></div>
-    <div class="sqr" id="8"></div>
+    <div id="scoreboard">
+      <div id="x-score">X: 0</div>
+      <div id="o-score">O: 0</div>
+    </div>
 
-    <div class="strike-line row-0"></div>
-    <div class="strike-line row-1"></div>
-    <div class="strike-line row-2"></div>
-    <div class="strike-line col-0"></div>
-    <div class="strike-line col-1"></div>
-    <div class="strike-line col-2"></div>
-    <div class="strike-line diag-desc"></div>
-    <div class="strike-line diag-asc"></div>
-  </section>
-  <button id="reset">Reset</button> 
-</body>
+    <section class="board">
+      <div class="sqr" id="0"></div>
+      <div class="sqr" id="1"></div>
+      <div class="sqr" id="2"></div>
+      <div class="sqr" id="3"></div>
+      <div class="sqr" id="4"></div>
+      <div class="sqr" id="5"></div>
+      <div class="sqr" id="6"></div>
+      <div class="sqr" id="7"></div>
+      <div class="sqr" id="8"></div>
+
+      <div class="strike-line row-0"></div>
+      <div class="strike-line row-1"></div>
+      <div class="strike-line row-2"></div>
+      <div class="strike-line col-0"></div>
+      <div class="strike-line col-1"></div>
+      <div class="strike-line col-2"></div>
+      <div class="strike-line diag-desc"></div>
+      <div class="strike-line diag-asc"></div>
+    </section>
+    <button id="reset">Reset</button>
+  </body>
 </html>

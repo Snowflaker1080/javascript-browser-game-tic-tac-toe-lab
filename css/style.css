@@ -7,7 +7,7 @@
 /*-------------------------------- Body -------------------------------------*/
 body {
   margin: 0;
-  background-color: gainsboro;
+  background-color: whitesmoke;
   font-family: system-ui, sans-serif;
   text-align: center;
 
@@ -33,35 +33,72 @@ h1 {
   font-size: 20px;
 }
 
+/*----------------------------- Scoreboard ----------------------------*/
+#scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 /*-------------------------------- Board ------------------------------------*/
 .board {
-  position: relative;       /* for strike-line overlays */
+  position: relative;   
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  width: min(90vw, 400px);
+  margin: 0 auto;
+  background-color: lightblue;
+  color: White;
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); 
+ 
+}
 
-  /* fluid up to a fixed cap */
-  width: 90vw;
-  max-width: 325px;
-
-  /* centre under the headings and above the reset button */
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-
-  /*  body is a column-flex */
+/*---------------------------- Reset Button ----------------------------*/
+#reset {
   align-self: center;
+  padding: 1vh 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  margin-bottom: 20vh;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); 
+}
+
+#reset:hover {
+  background-color: #555;
+  transform: scale(1.05);
 }
 
 /*-------------------------------- Squares ----------------------------------*/
 .sqr {
-  width: 30%;               /* three columns = 90% of board */
-  aspect-ratio: 1 / 1;
-  border: 3px solid black;
+  width: 33%;               /* three columns = 90% of board */
+  aspect-ratio: 1;
+  border: 4px solid white;
   font-size: 64px;
-
+  border-radius: 10px;
+  
   /* centre the X/O inside */
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.sqr:hover {
+  box-shadow: 0 0 12px 4px rgba(0, 140, 255, 0.6); /* blue glow */
+  transform: scale(1.05);
 }
 
 /*------------------------------ Strike Lines -------------------------------*/
@@ -78,11 +115,11 @@ h1 {
   opacity: 1;
 }
 
-/* --- Horizontal rows (span only the 3 squares = 90% width) --- */
+/* --- Horizontal rows (span only the 3 squares) --- */
 .strike-line.row-0,
 .strike-line.row-1,
 .strike-line.row-2 {
-  left: 0%;                 /* start after left 5% gap */
+  left: 5%;                 /* start after left */
   width: 90%;               /* cover exactly the 3 squares */
   height: 6px;
 }
@@ -97,7 +134,7 @@ h1 {
   top: calc(100% * 5 / 6);  /* halfway through third row */
 }
 
-/* --- Vertical columns (centres at 15%, 45%, 75%) --- */
+/* --- Vertical columns (centres at 20.5%, 49%, 77.5%) --- */
 .strike-line.col-0,
 .strike-line.col-1,
 .strike-line.col-2 {
@@ -107,19 +144,19 @@ h1 {
 }
 
 .strike-line.col-0 {
-  left: 14%;                /* 30%/2 */
+  left: 20.5%;                
 }
 .strike-line.col-1 {
-  left: 44%;                /* 30% + 15% */
+  left: 49%;               
 }
 .strike-line.col-2 {
-  left: 74%;                /* 60% + 15% */
+  left: 77.5%;              
 }
 
-/* --- Diagonals (unchanged) --- */
+/* --- Diagonals --- */
 .strike-line.diag-desc {
   top: 50%;
-  left: -18%;
+  left: -12%;
   width: 125%;
   height: 8px;
   transform: translateY(-50%) rotate(45deg);
@@ -127,16 +164,9 @@ h1 {
 
 .strike-line.diag-asc {
   top: 50%;
-  left: -18%;
+  left: -12%;
   width: 125%;
   height: 8px;
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/*---------------------------- Reset Button ----------------------------*/
-#reset {
-position: "fixed";
-left: 50%;
-transform: translate(-50%, -50%)
-
-}
